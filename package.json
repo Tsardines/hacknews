@@ -1,0 +1,22 @@
+{
+  "name": "hacknews",
+  "version": "1.0.0",
+  "description": "Cyberpunk-inspired Hacker News reader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tsardines/hacknews.git"
+  },
+  "author": "haley sulcer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tsardines/hacknews/issues"
+  },
+  "homepage": "https://github.com/Tsardines/hacknews#readme",
+  "dependencies": {
+    "augmented-ui": "^1.1.2"
+  }
+}
