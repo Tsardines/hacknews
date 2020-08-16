@@ -1,26 +1,21 @@
-import React from 'react';
-// import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from 'react';
+import { getStoryIds } from './Services/hnApi';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export const App = () => {
+  const [storyIds, setStoryIds] = useState([]); 
+    // want the storyIds to be stored in this var
+    // once this loads, assign an empty arr to it
 
-export default App;
+    useEffect(() => {}, []);
+      // an effect hook that lets you perform side effects in fn components
+      // similar to componentDidMount
+	
+    
+
+
+  return <p>{storyIds}</p>;
+  
+};
+
+
+// export default App;
