@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import { getStory } from '../Services/hnApi';
+import { getStory, storyUrl } from '../Services/hnApi';
+import { StoryWrapper, StoryTitle, StoryMeta, StoryMetaElement } from '../Styles/StoryStyles';
 
 export const Story = ({ storyId }) => {
     const [story, setStory] = useState({});
@@ -10,12 +11,23 @@ export const Story = ({ storyId }) => {
     }, []);
 
     return story && story.url ? (
-        <>
-        <a href={story.url}>
-            <p>{story.title}</p>
-        </a>
-        By: <p>{story.by}</p>
-        Posted: <p>{story.time}</p>
-        </>
+        <StoryWrapper data-testid='story'>
+            <StoryTitle>
+                <a href={story.url} target='_blank'>
+                    <p>{story.title}</p>
+                </a>
+            </StoryTitle>
+
+            <StoryMeta>
+                <span className='story__by' data-testid='story-by'> 
+                    <StoryMetaElement color='#000'>By:</StoryMetaElement> {story.by}
+                </span>
+                <span className='story__time' data-testid='story-time'> 
+                    <StoryMetaElement color='#000'>Posted:</StoryMetaElement> {` `}
+                    {story.time && mapTime()}
+                </span>
+            </StoryMeta>
+
+        </StoryWrapper>
     ) : null; // need null
 }

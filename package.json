@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Tsardines/hacknews#readme",
   "dependencies": {
-    "augmented-ui": "^1.1.2"
+    "augmented-ui": "^1.1.2",
+    "styled-components": "^5.1.1"
   }
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getStoryIds, getStory } from '../Services/hnApi';
+import { getStoryIds } from '../Services/hnApi';
 import { Story } from '../Components/Story';
 
 export const StoriesContainer = () => {
@@ -14,10 +14,12 @@ export const StoriesContainer = () => {
           // by writing setStoryIds, we're replacing the empty arr in L5 w/ 500 storyIds
         //   storyIds && storyIds.length > 0
       }, []);
-        
-      
   
-    return storyIds.map(storyId => <Story key={storyId} storyId={storyId} />);
-    
+    return  (
+        <>
+            <h1>HN Stories</h1>
+            {storyIds.map(storyId => <Story key={storyId} storyId={storyId} />)};
+        </>
+    )
   };
   
