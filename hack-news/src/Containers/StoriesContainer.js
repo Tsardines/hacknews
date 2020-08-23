@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { getStoryIds } from '../Services/hnApi';
 import { Story } from '../Components/Story';
+import {GlobalStyle, StoriesContainerWrapper  } from "../Styles/StoriesContainerStyles";
+import { useInfiniteScroll } from '../Hooks/useInfiniteScroll';
 
 export const StoriesContainer = () => {
-    const [storyIds, setStoryIds] = useState([]); 
+	const [storyIds, setStoryIds] = useState([]); 
+	const test = useInfiniteScroll();
       // want the storyIds to be stored in this var
       // once this loads, assign an empty arr to it
   
@@ -17,9 +20,14 @@ export const StoriesContainer = () => {
   
     return  (
         <>
-            <h1>HN Stories</h1>
-            {storyIds.map(storyId => <Story key={storyId} storyId={storyId} />)};
+			<GlobalStyle />
+			<StoriesContainerWrapper data-test-id='stories-container'>
+            	<h1>HN Stories</h1>
+            	{storyIds.map(storyId => (
+					<Story key={storyId} storyId={storyId} />
+				))}
+			</StoriesContainerWrapper>
         </>
-    )
-  };
+    );
+};
   
